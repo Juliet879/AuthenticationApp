@@ -9,9 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Week12">
-        <activity android:name=".SignupActivity"></activity>
-        <activity android:name=".DashboardActivity" />
-        <activity android:name=".WatoActivity" />
+        <activity android:name=".SignupActivity"
+            android:parentActivityName=".MainActivity"></activity>
+        <activity android:name=".DashboardActivity"
+            android:parentActivityName=".MainActivity"/>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
