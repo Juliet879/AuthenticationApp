@@ -8,17 +8,19 @@ import android.widget.*
 class SignupActivity : AppCompatActivity() {
     lateinit var name :EditText
     lateinit var tvBackToLogin :TextView
-    lateinit var getStarted :Button
+    lateinit var btnStarted :Button
     lateinit var spGender :Spinner
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_signup)
+        castViews()
+        clicked()
     }
 
     fun castViews(){
         name = findViewById(R.id.editName)
         tvBackToLogin = findViewById(R.id.tvbackToLogin)
-        getStarted = findViewById(R.id.btnStart)
+        btnStarted = findViewById(R.id.btnStart)
         spGender = findViewById(R.id.spnGender)
 
         var genders = arrayOf("Male","Female","Other")
@@ -35,7 +37,7 @@ class SignupActivity : AppCompatActivity() {
             var intent = Intent(baseContext,MainActivity::class.java)
                 startActivity(intent)
         }
-        getStarted.setOnClickListener {
+        btnStarted.setOnClickListener {
             var welcome = "Welcome ${name}"
             Toast.makeText(baseContext,welcome,Toast.LENGTH_LONG).show()
             var intent = Intent(baseContext,DashboardActivity::class.java)
